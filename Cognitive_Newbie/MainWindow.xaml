@@ -1,0 +1,59 @@
+﻿<Window x:Class="Cognitive_Newbie.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cognitive_Newbie"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock FontSize="24" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="4">Bing Speech,Image Search and Emotion</TextBlock>
+            <Button x:Name="button" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="button_Click"
+                Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Margin="4" Height="75">
+                <Button.Content>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock FontSize="16">Speak</TextBlock>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+
+            <TextBlock x:Name="status" TextWrapping="Wrap" Text="Not Listening" VerticalAlignment="Center" FontSize="16" Visibility="Collapsed"
+                   Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="4"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                <TextBlock x:Name="MySpeechResponse" FontSize="20" Margin="4" TextWrapping="Wrap" VerticalAlignment="Center" />
+                <TextBlock x:Name="MySpeechResponseConfidence" FontSize="12" Margin="4" TextWrapping="Wrap" VerticalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <TextBlock x:Name="MySpeechSentiment" Margin="4" FontSize="16" TextWrapping="Wrap" VerticalAlignment="Center" />
+                <TextBlock x:Name="MySpeechSentimentConfidence" FontSize="12" Margin="4" TextWrapping="Wrap" VerticalAlignment="Center" />
+            </StackPanel>
+
+            <Image x:Name="searchImage" Margin="4" Stretch="Uniform"
+               Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="RecordingBar" Visibility="Collapsed"
+                    Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="3">
+
+                <ProgressBar HorizontalAlignment="Left" Width="207" Margin="0,16,0,0" IsIndeterminate="True" />
+            </StackPanel>
+
+
+
+        </Grid>
+    </Grid>
+</Window>
